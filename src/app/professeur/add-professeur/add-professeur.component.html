@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
-  <link href="add-departement.component.css" rel="stylesheet" />
+  <link href="add-professeur.component.css" rel="stylesheet" />
     </head>
     
     <body style="background-color: #1a2035;"  class="dark-edition">
@@ -40,7 +40,7 @@
                       <p>Profile Etudiant</p>
                     </a>
                   </li>
-                  <li class="nav-item active">
+                  <li class="nav-item ">
                     <a class="nav-link" href="">
                       <i class="material-icons">content_paste</i>
                       <p>Departement</p>
@@ -76,7 +76,7 @@
                       <p>Universite</p>
                     </a>
                   </li>
-                  <li class="nav-item ">
+                  <li class="nav-item active">
                     <a class="nav-link" href="">
                       <i class="material-icons">notifications</i>
                       <p>Professeurs</p>
@@ -163,40 +163,159 @@
           <div class="content">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-10">
                   <div class="card">
                     <div class="card-header card-header-primary">
-                      <h4 class="card-title">Add Departement</h4>
-                      <p class="card-category">Departement</p>
+                      <h4 class="card-title">Add Professeur</h4>
+                      <p class="card-category">Professeur</p>
                     </div>
                     <div class="card-body">
                       <div class="card-body">
-                        <form _lpchecked="1" #f="ngForm" (ngSubmit)="AdddeparteA()">
+                        <form _lpchecked="1" #f="ngForm" (ngSubmit)="AddProfesseur()">
+
                           <div  class="form-group" >
-                          
-                           <div class="row" >
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                <div *ngIf="nomDepart.invalid && nomDepart.touched" 
+                              <div class="row" >
+              <!-- nom-->                  
+                                 <div class="col-md-6">
+                                     <div class="form-group">
+                                          <div *ngIf="prenomProf.invalid && prenomProf.touched" 
                                                   class="alert alert-danger" role="alert"  >
-                                  <div *ngIf="nomDepart.errors?.['required']" style="color: red;">required</div>
-                                  <div *ngIf="nomDepart.errors?.['pattern']"> chaine de caracteres  </div>
-                                  <div *ngIf="nomDepart.errors?.['minlength']"> more than 3  </div> 
-                            <div *ngIf="nomDepart.errors?.['maxlength']"> less than 10  </div> 
+                                            <div *ngIf="prenomProf.errors?.['required']" style="color: red;">required</div>
+                                            <div *ngIf="prenomProf.errors?.['pattern']"> chaine de caracteres  </div>
+                                            <div *ngIf="prenomProf.errors?.['minlength']"> more than 3  </div> 
+                                            <div *ngIf="prenomProf.errors?.['maxlength']"> less than 10  </div> 
+                                           </div>
+                                                <label class="bmd-label-floating" style="color: darkcyan; ">Prenom </label>
+                                                <input type="text" class="form-control" [(ngModel)]="profe.prenomProf"
+                                                required minlength="3" maxlength="10" pattern="[^\s][A-z0-9À-ž\s]+"  #prenomProf="ngModel"
+                                            name="prenomProf"  id="prenomProf" placeholder="prenom ">
+                                      </div>
+                                   </div>
+                                      <!-- prenom-->                  
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                         <div *ngIf="nomProf.invalid && nomProf.touched" 
+                                                 class="alert alert-danger" role="alert"  >
+                                           <div *ngIf="nomProf.errors?.['required']" style="color: red;">required</div>
+                                           <div *ngIf="nomProf.errors?.['pattern']"> chaine de caracteres  </div>
+                                           <div *ngIf="nomProf.errors?.['minlength']"> more than 3  </div> 
+                                           <div *ngIf="nomProf.errors?.['maxlength']"> less than 10  </div> 
+                                          </div>
+                                               <label class="bmd-label-floating" style=" color: darkcyan; ">Nom </label>
+                                               <input type="text" class="form-control" [(ngModel)]="profe.nomProf"
+                                               required minlength="3" maxlength="10" pattern="[^\s][A-z0-9À-ž\s]+"  #nomProf="ngModel"
+                                           name="nomProf"  id="nomProf" placeholder="nom ">
+                                     </div>
+                                  </div>
+<!-- Email-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div *ngIf="emailProf.invalid && emailProf.touched" 
+                                                            class="alert alert-danger" role="alert"  >
+                                                    <div *ngIf="emailProf.errors?.['required']" style="color: red;">required</div>
+                                                    <div *ngIf="emailProf?.errors?.['email']">email</div>
+                                                    </div>
+                                                        <label class="bmd-label-floating" style="color: darkcyan; ">Email </label>
+                                                        <input type="email" class="form-control" [(ngModel)]="profe.emailProf"
+                                                        required  #emailProf="ngModel"
+                                                    name="emailProf"  id="emailProf" placeholder="email ">
+                                                </div>
+                                            </div>
+    <!-- telephone-->                  
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                         <div *ngIf="numTelProf.invalid && numTelProf.touched" 
+                                                 class="alert alert-danger" role="alert"  >
+                                           <div *ngIf="numTelProf.errors?.['required']" style="color: red;">required</div>
+                                           <div *ngIf="numTelProf.errors?.['pattern']">  8 chiffres pattern </div>
+                                           <div *ngIf="numTelProf.errors?.['minlength']"> 8 chiffres min  </div> 
+                                           <div *ngIf="numTelProf.errors?.['maxlength']">  8 chiffres max</div> 
+                                          </div>
+                                               <label class="bmd-label-floating" style="color: darkcyan; ">Telephone </label>
+                                               <input type="tel" class="form-control" [(ngModel)]="profe.numTelProf"
+                                               required minlength="8" maxlength="8" pattern="[0-9]*"  #numTelProf="ngModel"
+                                           name="numTelProf"  id="numTelProf" placeholder="telephone-- ">
+                                     </div>
+                                  </div>
+                                      
+                                  <!-- module-->                  
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                         <div *ngIf="module.invalid && module.touched" 
+                                                 class="alert alert-danger" role="alert"  >
+                                                 <div *ngIf="module.errors?.['required']" style="color: red;">required</div>
+                                                 <div *ngIf="module.errors?.['pattern']"> chaine de caracteres  </div>
+                                                 <div *ngIf="module.errors?.['minlength']"> more than 3  </div> 
+                                                 <div *ngIf="module.errors?.['maxlength']"> less than 10  </div> 
+                                          </div>
+                                               <label class="bmd-label-floating" style="color: darkcyan; ">Module </label>
+                                               <input type="tel" class="form-control" [(ngModel)]="profe.module"
+                                               required minlength="8" maxlength="8" pattern="[^\s][A-z0-9À-ž\s]+"  #module="ngModel"
+                                           name="module"  id="module" placeholder="module-- ">
+                                     </div>
+                                  </div>
+
+                                    <!--Date -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div *ngIf="anneeAmb.invalid && anneeAmb.touched" 
+                                                 class="alert alert-danger" role="alert"  >
+                                           <div *ngIf="anneeAmb.errors?.['required']" style="color: red;">required</div>
+                                           </div>
+
+                                            <label class="bmd-label-floating" style="color: darkcyan;">Date Embauche</label>
+                                                        <input required type="Date" [(ngModel)]="profe.anneeAmb" 
+                                                        class="form-control" name="anneeAmb" #anneeAmb="ngModel" 
+                                                        id="anneeAmb" placeholder="Date debut">
+                                    </div> </div>
+                                    
+                                     <!-- heures-->                  
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                         <div *ngIf="nbrheure.invalid && nbrheure.touched" 
+                                                 class="alert alert-danger" role="alert"  >
+                                           <div *ngIf="nbrheure.errors?.['required']" style="color: red;">required</div>
+                                           <div *ngIf="nbrheure.errors?.['pattern']">  2 chiffres min </div>
+                                           <div *ngIf="nbrheure.errors?.['maxlength']">  2 chiffres max</div> 
+                                          </div>
+                                               <label class="bmd-label-floating" style="color: darkcyan; ">Heures </label>
+                                               <input type="tel" class="form-control" [(ngModel)]="profe.nbrheure"
+                                               required  maxlength="2" pattern="[0-9]*"  #nbrheure="ngModel"
+                                           name="nbrheure"  id="nbrheure" placeholder="nb heures-- ">
+                                           <div class="alert alert-danger" role="alert" *ngIf="f.value.nbrheure<5"> 
+                                    minimum 5 
+                                        </div>
+                                        <div class="alert alert-danger" role="alert" *ngIf="f.value.nbrheure>30"> 
+                                            maximum 30 
+                                                </div>
+
+                                     </div>
+                                  </div>
+
+
+                                  <!-- heures-->       
+                                  <div class="form-group">
+                                    <input required class="form-control"  type="text"[(ngModel)]="profe.classe" list=classe  name="classe" placeholder="classe Demandée" #classe="ngModel">
+                                    <div class="alert alert-danger" role="alert" *ngIf="f.value.classe == 1"> Please don't enter this</div>
+                                    <datalist id=classe >
+                                       <option value="PREMIERE"> PREMIERE 
+                                       <option value="DEUXIEME"> DEUXIEME
+                                        <option value="TROIXIEME"> TROIXIEME
+                                    </datalist> </div>
+
+
+                                  <!-- fin des attributs-->
+
                                 </div>
-                                <label class="bmd-label-floating">Nom Departement</label>
-                                <input type="text" class="form-control" [(ngModel)]="departemen.nomDepart"
-                                 required minlength="3" maxlength="10" pattern="[^\s][A-z0-9À-ž\s]+"  #nomDepart="ngModel"
-                                  name="nomDepart"  id="nomDepart" placeholder="nom de departement">
-                              </div>
+                                 <button type="submit" class="btn btn-primary pull-right" [disabled]="f.invalid" (click)=" AddProfesseur()" >AJOUTER </button>
+                                 <div class="clearfix"></div>
                             </div>
-                          
-                            
-                          </div>
-                          <button type="submit" class="btn btn-primary pull-right" [disabled]="f.invalid" (click)=" AdddeparteA()" >AJOUTER </button>
-                          <div class="clearfix"></div>
-                        </div>
-                        <button type="submit" class="btn btn-primary pull-right" (click)=" backToTheList()" >Retour</button>
+
+
+
+
+
+                             <button type="submit" class="btn btn-primary pull-right" (click)=" backToTheList()" >Retour</button>
       
                      
                         </form>

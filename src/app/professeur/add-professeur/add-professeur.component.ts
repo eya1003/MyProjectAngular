@@ -18,7 +18,7 @@ export class AddProfesseurComponent implements OnInit {
   ngOnInit(): void {
   }
   backToTheList(){
-    this.router.navigate(['departement/mainDepartement'])
+    this.router.navigate(['professeur/mainProfesseur'])
   }
   public AddProfesseur(){
     this.service.addProf(this.profe).subscribe(
@@ -31,6 +31,8 @@ export class AddProfesseurComponent implements OnInit {
         timer: 1500
       })
     this.part1=true;
-    this.router.navigate(['mainProfesseur'])
+    this.router.navigate(['professeur/mainProfesseur'])
     }
+    
+    
 }
