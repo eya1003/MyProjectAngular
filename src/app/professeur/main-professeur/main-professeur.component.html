@@ -167,7 +167,7 @@
                 <h4 class="card-title "> Table Professeur</h4>
                 <p class="card-category">Les Professeurs</p>
               </div>
-              <br><a class="collapse-item" [routerLink]="['/addProfesseur']" class="btn btn-primary pull-right" style="align-items:center ;" >AJOUTER</a>
+              <br><a class="collapse-item" [routerLink]="['professeur/addProfesseur']" class="btn btn-primary pull-right" style="align-items:center ;" >AJOUTER</a>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
@@ -194,7 +194,7 @@
                           <th>{{u.nbrheure}}</th>
                           <th>{{u.classe}}</th>
                           <th>
-                          <button  class="btn btn-primary pull-right" [routerLink]="['/updateDepartement/',u.idProfesseur]" >modify </button>
+                          <button  class="btn btn-primary pull-right" [routerLink]="['../updateProfesseur/',u.idProfesseur]" >modify </button>
                            <app-delete-professeur [professeur]="u"></app-delete-professeur>
                         </th>
                       </tr>

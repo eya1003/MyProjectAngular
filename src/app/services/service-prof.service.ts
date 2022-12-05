@@ -29,4 +29,8 @@ export class ServiceProfService {
     return this.http.get(this.baseUrl+"/ProfesseurC/findProfesseurById/"+idp)
   }
 
+  public SEARCHprof(){
+    return this.http.get(this.baseUrl+"/ProfesseurC/search")
+  }
+
 }
