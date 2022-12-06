@@ -1,4 +1,5 @@
 import { Classe } from "./Classe";
+import { Departement } from "./Departement";
 
 export class Professeur{
     idProfesseur: number |undefined;
@@ -10,5 +11,6 @@ export class Professeur{
     anneeAmb: Date |undefined;
     nbrheure: number |undefined;
     classe: Classe | undefined;
+    departementsProf: Departement| undefined;
 
 }

@@ -8,6 +8,7 @@ import { ProfesseurModule } from './professeur/professeur.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BackModule } from './back/back.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProfesseurModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BackModule
     ],
   providers: [],
   bootstrap: [AppComponent]

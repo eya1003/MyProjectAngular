@@ -8,6 +8,7 @@ import { UpdateDepartementComponent } from './update-departement/update-departem
 import { DeleteDepartementComponent } from './delete-departement/delete-departement.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BackModule } from '../back/back.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DepartementRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BackModule
   ]
 })
 export class DepartementModule { }

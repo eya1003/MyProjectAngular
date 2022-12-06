@@ -8,6 +8,7 @@ import { UpdateProfesseurComponent } from './update-professeur/update-professeur
 import { DeleteProfesseurComponent } from './delete-professeur/delete-professeur.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BackModule } from '../back/back.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProfesseurRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BackModule
   ]
 })
 export class ProfesseurModule { }

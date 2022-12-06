@@ -1,0 +1,98 @@
+<div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
+    <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+      Tip 2: you can also add an image using data-image tag
+  -->
+    <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        Creative Tim
+      </a></div>
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+          <li class="nav-item  ">
+              <a class="nav-link" href="./dashboard.html">
+                <i class="material-icons">dashboard</i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="">
+                <i class="material-icons">person</i>
+                <p>Profile Etudiant</p>
+              </a>
+            </li>
+            <li class="nav-item" [ngClass]="{'active' : goToDepartement()}">
+              <a class="nav-link"  routerLink="/departement/mainDepartement">
+                <i class="material-icons">content_paste</i>
+                <p>Departement</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="">
+                <i class="material-icons">content_paste</i>
+                <p>Contrats</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="">
+                <i class="material-icons">content_paste</i>
+                <p>Entreprises</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="">
+                <i class="material-icons">library_books</i>
+                <p>Equipes</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="">
+                <i class="material-icons">bubble_chart</i>
+                <p>Projet</p>
+              </a>
+            </li>
+           
+            <li class="nav-item ">
+              
+              <a class="nav-link" >
+                <i class="material-icons">school</i>
+                <p>Universite</p>
+              </a>
+            
+            </li>
+          
+            <li class="nav-item " >
+              <a class="nav-link" >
+                <i class="material-icons">work</i>
+                <p>Partenaire</p>
+              </a>
+            </li>
+
+            <li class="nav-item " >
+              <a class="nav-link"routerLink="/offre/mainoffre">
+                <i class="material-icons">offre</i>
+                <p>Offre</p>
+              </a>
+            </li>
+            
+            <li class="nav-item "[ngClass]="{'active' : goToProfesseur()}">
+              <a class="nav-link" routerLink="/professeur/mainProfesseur">
+                <i class="material-icons">notifications</i>
+                <p>Professeurs</p>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="">
+                <i class="material-icons">notifications</i>
+                <p>Tasks</p>
+              </a>
+            </li>
+        <!-- <li class="nav-item active-pro ">
+              <a class="nav-link" href="./upgrade.html">
+                  <i class="material-icons">unarchive</i>
+                  <p>Upgrade to PRO</p>
+              </a>
+          </li> -->
+      </ul>
+    </div>
+  </div>
+
