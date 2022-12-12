@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ServiceProfService } from 'src/app/services/service-prof.service';
+import { ServiceProfService } from 'src/app/Services/service-prof.service';
 declare var google:any ;
 @Component({
   selector: 'app-stats',

@@ -12,13 +12,17 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  goToDepartement(){
-    return this.route.url === '/departement/mainDepartement'
+
+  goUniversite(){
+    return this.route.url === '/universite/mainuniversite'
   }
 
-  goToProfesseur(){
-    return this.route.url === '/professeur/mainProfesseur'
+  goToPartenaire(){
+    return this.route.url === '/partenaire/mainpartenaire'
   }
 
+  goToOffre(){
+    return this.route.url === '/offre/mainoffre'
+  }
 
 }

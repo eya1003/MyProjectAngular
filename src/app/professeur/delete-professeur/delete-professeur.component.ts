@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Professeur } from 'src/app/model/Professeur';
-import { ServiceProfService } from 'src/app/services/service-prof.service';
+import { Professeur } from 'src/app/Models/Professeur';
+import { ServiceProfService } from 'src/app/Services/service-prof.service';
 import Swal from 'sweetalert2';
 
 @Component({

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Departement } from 'src/app/model/Departement';
-import { ServiceDepService } from 'src/app/services/service-dep.service';
+import { BehaviorSubject } from 'rxjs';
+import { Departement } from 'src/app/Models/Departement';
+import { ServiceDepService } from 'src/app/Services/service-dep.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,6 +12,12 @@ import Swal from 'sweetalert2';
 })
 export class MainDepartementComponent implements OnInit {
 depa:any;
+
+
+searchvalue !:string
+  listsearch : Departement[]=[];
+  
+  refresh$ = new BehaviorSubject(null);
   constructor(public departservice:ServiceDepService,
     private acR:ActivatedRoute,
     private router: Router) {
@@ -34,5 +41,42 @@ this.router.navigate(['mainDepartement'])
     });
 }
 
+afterDeleteDepartement( e:Departement ){
+  console.log(e);
+  let j=this.depa.indexOf(e);
+  this.depa.splice(j,1);
+  Swal.fire(
+    'Departement  :   '+e.nomDepart +  
+    '   Deleted!',
+    'Your file has been deleted.',
+    'success'
+  );
+}
 
+onsearch(){
+  if ( this.searchvalue.length!=0) {
+  this.departservice.search(this.searchvalue).subscribe(
+    (data) => {
+      
+        this.depa= data;
+      
+    },
+    () => this.getAllDepartements()
+  );
+}
+
+this.refresh$.next(null);
+}
+
+getAllDepartements(){
+
+
+  this.departservice.getDepartements().subscribe(
+    (u)=>{
+      this.depa=u;
+      console.log(this.depa)
+    }
+    
+    );
+}
 }

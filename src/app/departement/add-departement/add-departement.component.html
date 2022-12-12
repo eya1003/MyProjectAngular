@@ -52,13 +52,36 @@
                                 </div>
                                 <label class="bmd-label-floating">Nom Departement</label>
                                 <input type="text" class="form-control" [(ngModel)]="departemen.nomDepart"
-                                 required minlength="3" maxlength="10" pattern="[^\s][A-z0-9À-ž\s]+"  #nomDepart="ngModel"
+                                 required minlength="3" maxlength="18" pattern="[^\s][A-z0-9À-ž\s]+"  #nomDepart="ngModel"
                                   name="nomDepart"  id="nomDepart" placeholder="nom de departement">
                               </div>
                             </div>
                           
                             
                           </div>
+                          <!-- attribut nb etage-->
+
+                          <div class="row" >
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <div *ngIf="nbEtage.invalid && nbEtage.touched" 
+                                                  class="alert alert-danger" role="alert"  >
+                                  <div *ngIf="nbEtage.errors?.['required']" style="color: red;">required</div>
+                                  <div *ngIf="nbEtage.errors?.['pattern']"> inf à 10 </div>
+                                </div>
+                                <label class="bmd-label-floating">Nombre des Etages</label>
+                                <input type="text" class="form-control" [(ngModel)]="departemen.nbEtage"
+                                 required  pattern="[0-9]{1}"  #nbEtage="ngModel"
+                                  name="nbEtage"  id="nbEtage" placeholder="etages">
+                                  <div class="alert alert-danger" role="alert" *ngIf="f.value.nbEtage>5"> 
+                                    maximum 5
+                                        </div>
+                              </div>
+                            </div>
+                          
+                            
+                          </div>
+
                           <button type="submit" class="btn btn-primary pull-right" [disabled]="f.invalid" (click)=" AdddeparteA()" >AJOUTER </button>
                           <div class="clearfix"></div>
                         </div>

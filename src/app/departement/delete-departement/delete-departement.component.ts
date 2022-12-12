@@ -1,7 +1,7 @@
 import { Component,EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Departement } from 'src/app/model/Departement';
-import { ServiceDepService } from 'src/app/services/service-dep.service';
+import { Departement } from 'src/app/Models/Departement';
+import { ServiceDepService } from 'src/app/Services/service-dep.service';
 import Swal from 'sweetalert2';
 import { DepartementModule } from '../departement.module';
 

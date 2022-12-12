@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Departement } from 'src/app/model/Departement';
-import { ServiceDepService } from 'src/app/services/service-dep.service';
+import { Departement } from 'src/app/Models/Departement';
+import { ServiceDepService } from 'src/app/Services/service-dep.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -53,7 +53,7 @@ export class AddDepartementComponent implements OnInit {
         timer: 1500
       })
     this.part1=true;
-    this.router.navigate(['mainDepartement'])
+    this.router.navigate(['departement/mainDepartement'])
     }
 
 }

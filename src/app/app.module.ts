@@ -3,26 +3,38 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DepartementModule } from './departement/departement.module';
-import { ProfesseurModule } from './professeur/professeur.module';
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UniversiteModule } from './universite/universite.module';
+import { PartenaireModule } from './partenaire/partenaire.module';
+import { OffreModule } from './offre/offre.module';
+import { ReactiveFormsModule , FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BackModule } from './back/back.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FrontModule } from './front/front.module';
+import { ProfFRONTModule } from './prof-front/prof-front.module';
+
+
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DepartementModule,
-    ProfesseurModule,
+    UniversiteModule,
+    PartenaireModule,
+    OffreModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    BackModule
-    ],
+    BrowserAnimationsModule,
+    FrontModule,
+    ProfFRONTModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

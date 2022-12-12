@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Departement } from 'src/app/model/Departement';
-import { ServiceDepService } from 'src/app/services/service-dep.service';
+import { Departement } from 'src/app/Models/Departement';
+import { ServiceDepService } from 'src/app/Services/service-dep.service';
 
 @Component({
   selector: 'app-update-departement',
@@ -28,8 +28,6 @@ export class UpdateDepartementComponent implements OnInit {
   }
 
 
-  
-
    updatedeparte(){
 
     this.serviceDepart.UpdateDepartement(this.Departe).subscribe(
@@ -40,6 +38,6 @@ export class UpdateDepartementComponent implements OnInit {
     }
 
     backToTheList(){
-      this.route.navigate(['departement/mainDepartement'])
+      this.route.navigate(['./mainDepartement'])
     }
 }

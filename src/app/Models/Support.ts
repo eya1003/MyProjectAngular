@@ -1,0 +1,5 @@
+export enum Support{
+    Matériel=0,
+    Financier=1,
+    Juridique=2
+  }

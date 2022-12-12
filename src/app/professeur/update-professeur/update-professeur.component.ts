@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Professeur } from 'src/app/model/Professeur';
-import { ServiceProfService } from 'src/app/services/service-prof.service';
+import { Professeur } from 'src/app/Models/Professeur';
+import { ServiceDepService } from 'src/app/Services/service-dep.service';
+import { ServiceProfService } from 'src/app/Services/service-prof.service';
 
 @Component({
   selector: 'app-update-professeur',
@@ -9,13 +11,15 @@ import { ServiceProfService } from 'src/app/services/service-prof.service';
   styleUrls: ['./update-professeur.component.css']
 })
 export class UpdateProfesseurComponent implements OnInit {
-
+// driven form
+  
   profs = new Professeur
   idProf:any;
   data:any
-
+  depart: any
   constructor(private servicePRof:ServiceProfService,
-    private acr:ActivatedRoute , private route:Router) { }
+    private acr:ActivatedRoute,
+    private serviceDepart: ServiceDepService , private route:Router) { }
 
     getdepdata(){
       return this.servicePRof.GetProfById(this.idProf).subscribe(res=>{
@@ -24,6 +28,9 @@ export class UpdateProfesseurComponent implements OnInit {
     });
   }
   ngOnInit(): void {
+    this.serviceDepart.getDepartements().subscribe((data)=>{
+      this.depart=data;
+    });
     this.idProf=this.acr.snapshot.params['id'];
   this.getdepdata();
   }
@@ -42,5 +49,15 @@ export class UpdateProfesseurComponent implements OnInit {
 
     backToTheList(){
       this.route.navigate(['professeur/mainProfesseur'])
-    }
+    } 
+
+
+
+    
+
+
+
+
+  
+
 }

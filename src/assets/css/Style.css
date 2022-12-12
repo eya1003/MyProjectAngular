@@ -7557,6 +7557,8 @@ button.bg-dark:focus {
   position: relative !important;
 }
 
+
+
 .position-absolute {
   position: absolute !important;
 }
@@ -13827,6 +13829,13 @@ fieldset[disabled] .form-group .form-control {
   z-index: 1029;
 }
 
+.navbar.navbar-absolute-1 {
+  position: fixed;
+  width: 100%;
+  padding-top: 10px;
+  z-index: 1029;
+}
+
 .navbar .navbar-wrapper {
   display: inline-flex;
   align-items: center;
@@ -19555,6 +19564,10 @@ Copyright (c) 2015 Daniel Eden
   background-color: #1a2035;
 }
 
+.dark-edition-1 {
+  background-color: #fafafa;
+}
+
 .dark-edition .btn,
 .dark-edition .btn.btn-default {
   color: #fff;
@@ -20461,6 +20474,11 @@ Copyright (c) 2015 Daniel Eden
   color: #a9afbbd1;
   font-weight: 300;
 }
+.uu{
+  margin: 30px;
+  padding: 0;
+}
+ 
 
 .dark-edition .sidebar .logo:after {
   background-color: rgba(180, 180, 180, 0.1);
@@ -20468,8 +20486,9 @@ Copyright (c) 2015 Daniel Eden
 
 .dark-edition .navbar:not([class*="bg-"]) .navbar-brand,
 .dark-edition .navbar:not([class*="bg-"]) .collapse .navbar-nav .nav-item .nav-link {
-  color: #a9afbbd1;
+  color: #913f9e;
 }
+
 
 .dark-edition .navbar[class*="bg-"] .form-control::-moz-placeholder {
   color: #fff;

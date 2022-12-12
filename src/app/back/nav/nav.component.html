@@ -20,8 +20,8 @@
                 <p>Profile Etudiant</p>
               </a>
             </li>
-            <li class="nav-item" [ngClass]="{'active' : goToDepartement()}">
-              <a class="nav-link"  routerLink="/departement/mainDepartement">
+            <li class="nav-item">
+              <a class="nav-link" href="">
                 <i class="material-icons">content_paste</i>
                 <p>Departement</p>
               </a>
@@ -51,31 +51,31 @@
               </a>
             </li>
            
-            <li class="nav-item ">
+            <li class="nav-item  " [ngClass]="{'active' : goUniversite()}">
               
-              <a class="nav-link" >
+              <a class="nav-link" routerLink="/universite/mainuniversite">
                 <i class="material-icons">school</i>
                 <p>Universite</p>
               </a>
             
             </li>
           
-            <li class="nav-item " >
-              <a class="nav-link" >
+            <li class="nav-item " [ngClass]="{'active' : goToPartenaire()}">
+              <a class="nav-link" routerLink="/partenaire/mainpartenaire">
                 <i class="material-icons">work</i>
                 <p>Partenaire</p>
               </a>
             </li>
 
-            <li class="nav-item " >
+            <li class="nav-item " [ngClass]="{'active' : goToOffre()}" >
               <a class="nav-link"routerLink="/offre/mainoffre">
                 <i class="material-icons">offre</i>
                 <p>Offre</p>
               </a>
             </li>
             
-            <li class="nav-item "[ngClass]="{'active' : goToProfesseur()}">
-              <a class="nav-link" routerLink="/professeur/mainProfesseur">
+            <li class="nav-item ">
+              <a class="nav-link" href="">
                 <i class="material-icons">notifications</i>
                 <p>Professeurs</p>
               </a>
@@ -95,4 +95,3 @@
       </ul>
     </div>
   </div>
-

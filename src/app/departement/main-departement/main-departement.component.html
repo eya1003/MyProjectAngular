@@ -31,25 +31,34 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-primary">
+
+                <!-- Serch-->
+                <p>
+                  <input type="text" [(ngModel)]="searchvalue"  (keyup)="onsearch()" class="form-control search-text-indent  searchbar-positioning" placeholder="Search">
+                </p>
+
+                
                 <h4 class="card-title "> Table Departement</h4>
                 <p class="card-category">Les Departementss</p>
               </div>
-              <br><a class="collapse-item" [routerLink]="['/addDepartement']" class="btn btn-primary pull-right" style="align-items:center ;" >AJOUTER</a>
+              <br><a class="collapse-item" [routerLink]="['../addDepartement']" class="btn btn-primary pull-right" style="align-items:center ;" >AJOUTER</a>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
                       <th>#</th>
                       <th>Nom Departement</th>
+                      <th> Les etages </th>
                     </thead>
                     <tbody>
                       <tr *ngFor="let u of depa">
                           <th scope="row">{{u.idDepart}}</th>
                           <th>{{u.nomDepart}}</th>
+                          <th> {{u.nbEtage}}</th>
                          <th>
-                          <button  class="btn btn-primary pull-right" [routerLink]="['/updateDepartement/',u.idDepart]" >modify </button>
+                          <button  class="btn btn-primary pull-right" [routerLink]="['../updateDepartement/',u.idDepart]" >modify </button>
                           
-                          <app-delete-departement [departement]="u"></app-delete-departement> 
+                          <app-delete-departement [departement]="u" (notif)="afterDeleteDepartement($event)"  ></app-delete-departement> 
                        
                         </th>
                       </tr>

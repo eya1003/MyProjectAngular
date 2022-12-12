@@ -31,37 +31,55 @@
             <div class="col-md-8">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title">Add Departement</h4>
+                  <h4 class="card-title">Update Departement</h4>
                   <p class="card-category">Departement</p>
                 </div>
                 <div class="card-body">
                   <form _lpchecked="1" #f="ngForm" (ngSubmit)="updatedeparte()">
                     <div  class="form-group" >
-                    
-                     <div class="row" >
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <div *ngIf="nomDepart.invalid && nomDepart.touched" 
-                                            class="alert alert-danger" role="alert"  >
-                            <div *ngIf="nomDepart.errors?.['required']" style="color: red;">required</div>
-                            <div *ngIf="nomDepart.errors?.['pattern']"> Chaine de caractères  </div>
-                            <div *ngIf="nomDepart.errors?.['minlength']"> more than 3  </div> 
-                            <div *ngIf="nomDepart.errors?.['maxlength']"> less than 10  </div> 
+                          
+                      <div class="row" >
+                       <div class="col-md-6">
+                         <div class="form-group">
+                           <div *ngIf="nomDepart.invalid && nomDepart.touched" 
+                                             class="alert alert-danger" role="alert"  >
+                             <div *ngIf="nomDepart.errors?.['required']" style="color: red;">required</div>
+                             <div *ngIf="nomDepart.errors?.['pattern']"> chaine de caracteres  </div>
+                             <div *ngIf="nomDepart.errors?.['minlength']"> more than 3  </div> 
+                       <div *ngIf="nomDepart.errors?.['maxlength']"> less than 10  </div> 
+                           </div>
+                           <label class="bmd-label-floating">Nom Departement</label>
+                           <input type="text" class="form-control" [(ngModel)]="Departe.nomDepart"
+                            required minlength="3" maxlength="18" pattern="[^\s][A-z0-9À-ž\s]+"  #nomDepart="ngModel"
+                             name="nomDepart"  id="nomDepart" placeholder="nom de departement">
+                         </div>
+                       </div>
+                       <!-- attribut nb etage-->
+</div>
+                       <div class="row" >
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <div *ngIf="nbEtage.invalid && nbEtage.touched" 
+                                              class="alert alert-danger" role="alert"  >
+                              <div *ngIf="nbEtage.errors?.['required']" style="color: red;">required</div>
+                              <div *ngIf="nbEtage.errors?.['pattern']"> inf à 10 </div>
+                            </div>
+                            <label class="bmd-label-floating">Nombre des Etages</label>
+                            <input type="text" class="form-control" [(ngModel)]="Departe.nbEtage"
+                             required  pattern="[0-9]{1}"  #nbEtage="ngModel"
+                              name="nbEtage"  id="nbEtage" placeholder="etages">
+                              <div class="alert alert-danger" role="alert" *ngIf="f.value.nbEtage>5"> 
+                                maximum 5
+                                    </div>
                           </div>
-                          <label class="bmd-label-floating">Nom Departement</label>
-                          <input type="text" class="form-control" [(ngModel)]="Departe.nomDepart"
-                           required minlength="3" maxlength="10" pattern="[a-zA-Z]*"  #nomDepart="ngModel"
-                            name="nomDepart"  id="nomDepart" placeholder="nom de departement">
-                        </div>
-                      </div>
-                    
-                      
-                    </div>
+                        
+                     </div>
+                       </div>
                     <button type="submit" class="btn btn-primary pull-right" [disabled]="f.invalid" (click)=" updatedeparte()" >Modifier</button>
                     <div class="clearfix"></div>
                   </div>
-                  <button type="submit" class="btn btn-primary pull-right" (click)=" backToTheList()" >Retour</button>
-
+                  <button type="submit" class="btn btn-primary pull-right" (click)=" updatedeparte()" >Retour</button>
+                    
                
                   </form>
                 </div>
