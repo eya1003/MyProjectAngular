@@ -5,7 +5,7 @@ import { FrontmainProfesseurComponent } from './frontmain-professeur/frontmain-p
 const routes: Routes = [
   {path : "mainProfesseur" ,component:FrontmainProfesseurComponent},
 ];
-
+// for Front
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

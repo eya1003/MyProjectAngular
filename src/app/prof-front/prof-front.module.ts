@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BackModule } from '../back/back.module';
 import { FrontaddProfesseurComponent } from './frontadd-professeur/frontadd-professeur.component';
 
-
+// for Front
 @NgModule({
   declarations: [
     FrontmainProfesseurComponent,

@@ -12,7 +12,7 @@ const routes: Routes = [
 {path:"professeur",loadChildren:()=>import("./professeur/professeur.module").then(m=>m.ProfesseurModule),
 }
 ];
-
+// for Front
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
